@@ -8,8 +8,12 @@ import java.util.List;
 @Service
 public class PersonService {
 
-    @Autowired
-    private PersonRepository repo;
+    private final PersonRepository repo;
+
+    public PersonService (PersonRepository repo){
+
+        this.repo = repo;
+    }
 
     public void add(Person person){
 

@@ -11,8 +11,12 @@ import java.util.List;
 @Controller
 public class PersonController {
 
+    private final PersonService service;
+
     @Autowired
-    private PersonService service;
+    public PersonController(PersonService service){
+        this.service = service;
+    }
 
     @RequestMapping("/")
     public String viewHomePage(Model model) {
